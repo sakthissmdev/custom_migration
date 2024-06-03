@@ -1,0 +1,87 @@
+id: custom_migrate_users
+label: Migrate Users
+migration_tags:
+  - 'JSON'
+  - Users
+migration_group: custom_migrate
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: https://jsonplaceholder.typicode.com/users
+  item_selector: /
+  fields:
+    -
+      name: field_id
+      label: ID of the user.
+      selector: id
+    -
+      name: title
+      label: Name of the User
+      selector: name
+    -
+      name: field_username
+      label: User Name
+      selector: username
+    -
+      name: field_email
+      label: Email Address of the User
+      selector: username
+    -
+      name: field_street
+      label: Street Name of the User
+      selector: address/street
+    -
+      name: field_suite
+      label: Suite of the User
+      selector: address/suite
+    -
+      name: field_city
+      label: City of the User
+      selector: address/city
+    -
+      name: field_zip_code
+      label: Zip Code
+      selector: address/zipcode
+    -
+      name: field_geo_location_lat
+      label: Geo Code of the User
+      selector: address/geo/lat
+    -
+      name: field_geo_location_lng
+      label: Geo Code of the User
+      selector: address/geo/lng
+    -
+      name: field_company_associated
+      label: Company Associated
+      selector: company/name
+  ids:
+    title:
+      type: string
+process:
+  title: title
+  field_id: field_id
+  field_username: field_username
+  field_email: field_email
+  field_street: field_street
+  field_suite: field_suite
+  field_city: field_city
+  field_zip_code: field_zip_code
+  field_geo_location:
+    plugin: geofield_latlon
+    source:
+      - field_geo_location_lat
+      - field_geo_location_lng
+  field_company_associated:
+    plugin: migration_lookup
+    migration: custom_migrate_company
+    source: field_company_associated
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+  default_bundle: user
+migration_dependencies:
+  required:
+    - custom_migrate_company

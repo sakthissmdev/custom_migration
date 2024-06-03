@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains hook_implementation of Custom Migration Module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function custom_migration_theme($existing, $type, $theme, $path) {
+  return [
+    'render_user' => [
+      'variables' => [
+        'header' => [],
+        'rows' => [],
+      ],
+      'template' => 'custom_user_render',
+    ],
+  ];
+}

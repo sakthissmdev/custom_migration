@@ -1,0 +1,109 @@
+uuid: c957b37e-4cc9-4d71-806e-3a860bd9960a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.user.body
+    - field.field.node.user.field_city
+    - field.field.node.user.field_company_associated
+    - field.field.node.user.field_email
+    - field.field.node.user.field_geo_location
+    - field.field.node.user.field_id
+    - field.field.node.user.field_street
+    - field.field.node.user.field_suite
+    - field.field.node.user.field_username
+    - field.field.node.user.field_zip_code
+    - node.type.user
+  module:
+    - geofield
+    - text
+    - user
+id: node.user.default
+targetEntityType: node
+bundle: user
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_city:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_company_associated:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_geo_location:
+    type: geofield_latlon
+    label: above
+    settings:
+      output_format: wkt
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_street:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_suite:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_username:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_zip_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains hook_implementation of Custom Migration module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function custom_migration_uninstall() {
+  \Drupal::configFactory()->getEditable('migrate_plus.migration_group.custom_migrate')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.custom_migrate_company')->delete();
+  \Drupal::configFactory()->getEditable('migrate_plus.migration.custom_migrate_users')->delete();
+}

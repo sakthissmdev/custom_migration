@@ -1,0 +1,7 @@
+custom_migration.render_users:
+  path: '/custom-migration/users'
+  defaults:
+    _controller: '\Drupal\custom_migration\Controller\RenderUsers::renderUser'
+    _title: 'Render Users'
+  requirements:
+    _permission: 'access content'

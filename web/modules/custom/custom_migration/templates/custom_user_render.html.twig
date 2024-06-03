@@ -1,0 +1,30 @@
+{{ attach_library('custom_migration/custom_table') }}
+{% if rows %}
+  <table class="render-users">
+    <thead>
+      <tr>
+        {% for item in header %}
+          <th>{{ item }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr>
+          {% for column in row %}
+            <td>
+              {% if column.data %}
+                {{ column.data|render }}
+              {% else %}
+                {{ column }}
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+  {% else %}
+    <h4>No Contents to display.</h4>
+  {% endif %}
+

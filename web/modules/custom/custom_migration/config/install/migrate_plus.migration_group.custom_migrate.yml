@@ -1,0 +1,8 @@
+id: custom_migrate
+dependencies:
+  enforced:
+    module:
+      - custom_migration
+label: Custom Migration
+description: ''
+source_type: JSON

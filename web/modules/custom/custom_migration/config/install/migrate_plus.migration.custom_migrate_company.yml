@@ -1,0 +1,40 @@
+id: custom_migrate_company
+label: Migrate Company
+migration_tags:
+  - 'JSON'
+  - Company
+migration_group: custom_migrate
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: https://jsonplaceholder.typicode.com/users
+  item_selector: /
+  fields:
+    -
+      name: title
+      label: Title
+      selector: company/name
+    -
+      name: field_catch_phrase
+      label: Catch Phrase
+      selector: company/catchPhrase
+    -
+      name: field_bs
+      label: bs
+      selector: company/bs
+  ids:
+    title:
+      type: string
+process:
+  title: title
+  field_catch_phrase: field_catch_phrase
+  field_bs: field_bs
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+  default_bundle: company
+migration_dependencies:
+  required: {}

@@ -1,0 +1,4 @@
+custom_table:
+  css:
+    component:
+      assets/css/custom_user.css: {}

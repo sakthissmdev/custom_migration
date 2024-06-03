@@ -1,0 +1,29 @@
+uuid: c458f34e-bd67-480b-a990-39347f777b29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_associated
+    - node.type.company
+    - node.type.user
+id: node.user.field_company_associated
+field_name: field_company_associated
+entity_type: node
+bundle: user
+label: 'Company Associated'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      company: company
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

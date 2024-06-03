@@ -1,0 +1,38 @@
+table.render-users {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.render-users thead tr {
+  background: linear-gradient(179deg, #2980b9, #b96229);
+}
+
+table.render-users th {
+  width: max-content;
+  text-align: left;
+  color: #fff;
+  padding: 20px;
+}
+
+table.render-users td {
+  padding: 10px;
+  background-color: #2980b9;
+  color: #fff;
+  font-weight: 600;
+}
+
+table.render-users td a {
+  color: #fff;
+}
+
+table.render-users td a:hover {
+  color: #6cb5f1;
+}
+
+table.render-users tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table.render-users tr:hover {
+  background-color: #ddd;
+}
