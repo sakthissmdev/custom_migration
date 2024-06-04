@@ -2,3 +2,9 @@ custom_table:
   css:
     component:
       assets/css/custom_user.css: {}
+  js:
+    assets/js/customTable.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

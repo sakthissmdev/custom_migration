@@ -36,3 +36,16 @@ table.render-users tr:nth-child(even) {
 table.render-users tr:hover {
   background-color: #ddd;
 }
+
+@media screen and (max-width:768px) {
+  table.render-users {
+    max-width: 100%;
+    overflow: scroll;
+  }
+  table.render-users th {
+    padding: 10px;
+  }
+  table.render-users td {
+    padding: 5px;
+  }
+}
